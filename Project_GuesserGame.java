@@ -28,12 +28,12 @@ public class Project_GuesserGame {
 
 			System.out.println("Do you want to continue the game(y/n)");
 			Scanner scan = new Scanner(System.in);
-			String s= scan.next();
+			String s = scan.next();
 			if (s.equals("y"))
 				continue;
 			else if (s.equals("n"))
 				System.out.println("ThankYou for playing!!");
-				break;
+			break;
 		}
 	}
 }
@@ -77,9 +77,11 @@ class Player {
 	static void updateScoreP1() {
 		scoreP1++;
 	}
+
 	static void updateScoreP2() {
 		scoreP2++;
 	}
+
 	static void updateScoreP3() {
 		scoreP3++;
 	}
@@ -109,14 +111,16 @@ class Umpire {
 	}
 
 	void scoreBoard() {
-		
+
 		Player.dispScore();
 	}
-	void draw(Player draw1, Player draw2){
+
+	void draw(Player draw1, Player draw2) {
 		collectNumFromGuesser();
-		drawNum1=draw1.guessNum();
-		drawNum2=draw2.guessNum();
+		drawNum1 = draw1.guessNum();
+		drawNum2 = draw2.guessNum();
 	}
+
 	void play() {
 
 		if (numFromGuesser == numFromPlayer1) {
@@ -130,45 +134,49 @@ class Umpire {
 				System.out.println("----------------");
 				System.out.println("Draw between Player 1 & Player2");
 				System.out.println("----------------");
-				draw(p1, p2);
-				if (drawNum1==numFromGuesser&&drawNum2!=numFromGuesser) {
-					System.out.println("----------------");
-					System.out.println("Player 1 won the game");
-					System.out.println("----------------");
-					Player.updateScoreP1();
-				}
-				else if (drawNum2==numFromGuesser&&drawNum1!=numFromGuesser) {
-					System.out.println("----------------");
-					System.out.println("Player 2 won the game");
-					System.out.println("----------------");
-					Player.updateScoreP2();
-				}
-				else{
-					System.out.println("----------------");
-					System.out.println("Nobody won!");
-					System.out.println("----------------");
+				while (true) {
+					draw(p1, p2);
+					if (drawNum1 == numFromGuesser && drawNum2 != numFromGuesser) {
+						System.out.println("----------------");
+						System.out.println("Player 1 won the game");
+						System.out.println("----------------");
+						Player.updateScoreP1();
+						break;
+					} else if (drawNum2 == numFromGuesser && drawNum1 != numFromGuesser) {
+						System.out.println("----------------");
+						System.out.println("Player 2 won the game");
+						System.out.println("----------------");
+						Player.updateScoreP2();
+						break;
+					} else {
+						System.out.println("----------------");
+						System.out.println("Nobody won!");
+						System.out.println("----------------");
+					}
 				}
 			} else if (numFromGuesser == numFromPlayer3) {
 				System.out.println("----------------");
 				System.out.println("Draw between Player 1 & Player3");
 				System.out.println("----------------");
-				draw(p1, p3);
-				if (drawNum1==numFromGuesser&&drawNum2!=numFromGuesser) {
-					System.out.println("----------------");
-					System.out.println("Player 1 won the game");
-					System.out.println("----------------");
-					Player.updateScoreP1();
-				}
-				else if (drawNum2==numFromGuesser&&drawNum1!=numFromGuesser) {
-					System.out.println("----------------");
-					System.out.println("Player 3 won the game");
-					System.out.println("----------------");
-					Player.updateScoreP3();
-				}
-				else{
-					System.out.println("----------------");
-					System.out.println("Nobody won!");
-					System.out.println("----------------");
+				while (true) {
+					draw(p1, p3);
+					if (drawNum1 == numFromGuesser && drawNum2 != numFromGuesser) {
+						System.out.println("----------------");
+						System.out.println("Player 1 won the game");
+						System.out.println("----------------");
+						Player.updateScoreP1();
+						break;
+					} else if (drawNum2 == numFromGuesser && drawNum1 != numFromGuesser) {
+						System.out.println("----------------");
+						System.out.println("Player 3 won the game");
+						System.out.println("----------------");
+						Player.updateScoreP3();
+						break;
+					} else {
+						System.out.println("----------------");
+						System.out.println("Nobody won!");
+						System.out.println("----------------");
+					}
 				}
 			} else {
 				System.out.println("----------------");
@@ -181,23 +189,25 @@ class Umpire {
 				System.out.println("----------------");
 				System.out.println("Draw between Player 2 & Player3");
 				System.out.println("----------------");
-				draw(p2, p3);
-				if (drawNum1==numFromGuesser&&drawNum2!=numFromGuesser) {
-					System.out.println("----------------");
-					System.out.println("Player 2 won the game");
-					System.out.println("----------------");
-					Player.updateScoreP2();
-				}
-				else if (drawNum2==numFromGuesser&&drawNum1!=numFromGuesser) {
-					System.out.println("----------------");
-					System.out.println("Player 3 won the game");
-					System.out.println("----------------");
-					Player.updateScoreP3();
-				}
-				else{
-					System.out.println("----------------");
-					System.out.println("Nobody won!");
-					System.out.println("----------------");
+				while (true) {
+					draw(p2, p3);
+					if (drawNum1 == numFromGuesser && drawNum2 != numFromGuesser) {
+						System.out.println("----------------");
+						System.out.println("Player 2 won the game");
+						System.out.println("----------------");
+						Player.updateScoreP2();
+						break;
+					} else if (drawNum2 == numFromGuesser && drawNum1 != numFromGuesser) {
+						System.out.println("----------------");
+						System.out.println("Player 3 won the game");
+						System.out.println("----------------");
+						Player.updateScoreP3();
+						break;
+					} else {
+						System.out.println("----------------");
+						System.out.println("Nobody won!");
+						System.out.println("----------------");
+					}
 				}
 			} else {
 				System.out.println("----------------");
