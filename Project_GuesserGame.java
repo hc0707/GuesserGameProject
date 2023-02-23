@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//This was my first basic project using Java(JSE). It is console based project.
 // Enhancements made:
 
 // 1--Made all data members private(encapsulation)
